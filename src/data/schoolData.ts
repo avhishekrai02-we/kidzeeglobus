@@ -51,7 +51,7 @@ export const SCHOOL_INFO = {
   currentLocation: 'Kyongsa, Near District Court, Gayzing, West Sikkim',
   gradesOffered: 'Playgroup to Class V',
   crestUrl: '/assets/aistudio/Kidzee_Globus_School_Crest_3b98668b.png',
-  heroPhotoUrl: '/assets/aistudio/WhatsApp_Image_2026-11-19_at_2.30.21_PM_6f1b2386.jpeg',
+  heroPhotoUrl: '/assets/aistudio/Kidzee_Hero_Student_Cutout.png',
   aboutPhotoUrl: '/assets/aistudio/WhatsApp_Image_2026-11-19_at_2.30.20_PM__1__2e5c8f7c.jpeg',
   schoolHours: 'Mon – Sat · 8:30 AM to 2:30 PM',
   admissionsDeskHours: 'Mon – Sat · 9:00 AM to 3:30 PM',
