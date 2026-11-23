@@ -111,9 +111,17 @@ export function AdmissionsSection({ preselectedClass }: AdmissionsSectionProps) 
             {/* Left Info & Steps Column */}
             <div className="lg:col-span-5 space-y-6">
               <div className="space-y-3">
-                <p className="text-sm font-semibold text-[#5B158C] tracking-wide">
-                  Admissions Open · Academic Session
-                </p>
+                <div className="flex flex-wrap items-center gap-2">
+                  <p className="text-sm font-semibold text-[#5B158C] tracking-wide">
+                    Admissions Open · Academic Session
+                  </p>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FFE11D] text-[#3E0B66] text-xs font-display font-bold shadow-sm -rotate-2">
+                    🎒 Admissions 2026–27 Open
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-[#5B158C] border border-[#E7D8F5] text-xs font-display font-bold shadow-sm rotate-1">
+                    🏫 Campus Tours Mon–Sat
+                  </span>
+                </div>
                 <h2 className="font-display font-bold text-3xl sm:text-4xl text-[#241038] text-balance leading-tight">
                   Begin Your Child’s Journey With Us
                 </h2>

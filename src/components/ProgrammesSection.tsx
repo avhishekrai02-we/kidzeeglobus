@@ -88,6 +88,14 @@ export function ProgrammesSection({ onApplyForClass }: ProgrammesSectionProps) {
           <h2 className="font-display font-bold text-3xl sm:text-5xl text-white text-balance">
             Our Programmes
           </h2>
+          <div className="flex flex-wrap items-center gap-2 pt-1 pb-1">
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#FFE11D] text-[#3E0B66] text-xs font-display font-bold shadow-md -rotate-2 animate-float">
+              🧸 Joyful Sensory Play
+            </span>
+            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/20 text-[#FFE11D] border border-white/30 text-xs font-display font-bold rotate-2 animate-float-delayed">
+              🔬 NEP 2020 Aligned
+            </span>
+          </div>
           <p className="text-base text-white/85 leading-relaxed">
             Every stage is crafted for young learners — combining joyful sensory play, creative arts,
             early literacy, and hands-on primary science.

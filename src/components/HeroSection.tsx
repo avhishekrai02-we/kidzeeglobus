@@ -28,7 +28,7 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
         aria-hidden="true"
         viewBox="0 0 1440 720"
         preserveAspectRatio="none"
-        className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none select-none"
+        className="absolute inset-0 w-full h-full pointer-events-none select-none"
       >
         <path
           d="M0,0 L1440,0 L1440,560 C1180,680 860,640 600,560 C330,475 130,570 0,520 Z"
@@ -70,67 +70,56 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
       </svg>
 
       <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="flex lg:grid lg:grid-cols-12 gap-2 sm:gap-6 lg:gap-12 items-end lg:items-center">
           {/* Left Content Column */}
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 space-y-6"
+            className="w-[58%] lg:w-auto lg:col-span-7 space-y-2 sm:space-y-4 lg:space-y-6 flex-shrink-0"
           >
-            <p className="text-sm sm:text-base font-semibold text-[#FFE11D] tracking-wide">
-              Admission Open · {SCHOOL_INFO.gradesOffered} · Gayzing, West Sikkim
-            </p>
+            <div className="flex flex-wrap items-center gap-2">
+              <p className="text-[11px] sm:text-base font-semibold text-[#FFE11D] tracking-wide whitespace-nowrap overflow-hidden text-ellipsis">
+                Admission Open · {SCHOOL_INFO.gradesOffered} · Gayzing
+              </p>
+              <div className="hidden lg:inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-xs shadow-sm -rotate-2 animate-float">
+                <span>🎈 Joyful Learning</span>
+              </div>
+            </div>
 
             <h1
-              className="font-display font-bold text-white leading-[1.08] tracking-tight text-balance"
-              style={{ fontSize: 'clamp(2.4rem, 4.6vw, 4.1rem)' }}
+              className="font-display font-bold text-white leading-[1.08] tracking-tight text-balance text-xl sm:text-4xl lg:text-[clamp(2.4rem,4.6vw,4.1rem)]"
             >
               {SCHOOL_INFO.tagline}
             </h1>
 
-            {/* Mobile Layout (< lg): Stacked and centered */}
-            <div className="block lg:hidden space-y-4 pt-1">
-              <p className="text-sm sm:text-base text-white/90 leading-relaxed">
+            {/* Mobile Layout (< lg): Compact side-by-side text & buttons */}
+            <div className="block lg:hidden space-y-2 pt-0.5">
+              <p className="text-[11px] sm:text-sm text-white/90 leading-snug line-clamp-3 sm:line-clamp-none">
                 Welcome to <strong className="font-semibold text-white">{SCHOOL_INFO.name}</strong> in
-                Kyongsa, Gayzing. A joyful, colourful learning home where curious toddlers and primary
-                learners up to Class V grow with confidence, creativity, and care.
+                Kyongsa, Gayzing. A joyful, colourful learning home for curious toddlers and primary learners.
               </p>
 
-              <div className="flex flex-wrap items-center gap-3 pt-1">
+              <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
                 <button
                   type="button"
                   onClick={onEnrolClick}
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-sm sm:text-base shadow-lg transition-transform active:scale-95 whitespace-nowrap shrink-0 cursor-pointer"
+                  className="inline-flex items-center gap-1 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-xs sm:text-sm shadow-md transition-transform active:scale-95 whitespace-nowrap shrink-0 cursor-pointer"
                 >
                   <span>Enrol Now</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                 </button>
 
                 <a
                   href="#programmes"
-                  className="inline-flex items-center px-4 py-3 rounded-2xl border-2 border-white/35 text-white font-display font-semibold text-xs sm:text-sm whitespace-nowrap shrink-0 transition-colors hover:bg-white/10"
+                  className="inline-flex items-center px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl border border-white/40 text-white font-display font-semibold text-[11px] sm:text-xs whitespace-nowrap shrink-0 transition-colors hover:bg-white/10"
                 >
-                  Explore Programmes
+                  Explore
                 </a>
-              </div>
-
-              {/* Mobile Student Portrait Showcase */}
-              <div className="relative w-full max-w-sm sm:max-w-md mx-auto pt-3 flex justify-center items-end">
-                <div
-                  aria-hidden="true"
-                  className="absolute w-64 h-64 rounded-full bg-[#FFE11D]/20 -bottom-4 left-1/2 -translate-x-1/2 pointer-events-none"
-                />
-                <img
-                  src={SCHOOL_INFO.heroPhotoUrl}
-                  alt="Kidzee Globus Student"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-auto max-h-[380px] sm:max-h-[460px] object-contain drop-shadow-2xl select-none relative z-10"
-                />
               </div>
             </div>
 
-            {/* Desktop Content (lg:block): 2-column layout */}
+            {/* Desktop Content (lg:block): Full 2-column layout */}
             <div className="hidden lg:block space-y-6">
               <p className="text-base sm:text-lg text-white/90 max-w-xl leading-relaxed">
                 Welcome to <strong className="font-semibold text-white">{SCHOOL_INFO.name}</strong> in
@@ -154,6 +143,10 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
                 >
                   Explore Programmes
                 </a>
+
+                <div className="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/15 border border-white/25 text-[#FFE11D] text-xs font-semibold animate-pulse-subtle">
+                  <span>✨ Admissions 2026–27 Open</span>
+                </div>
               </div>
             </div>
 
@@ -195,20 +188,19 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
             </div>
           </motion.div>
 
-          {/* Right Featured Student Portrait Column - Desktop */}
+          {/* Right Featured Student Portrait Column - Both Mobile & Desktop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-            className="hidden lg:flex lg:col-span-5 justify-center lg:justify-end"
+            className="w-[42%] lg:w-auto lg:col-span-5 flex justify-center lg:justify-end items-end flex-shrink-0"
           >
-            <div className="relative w-full max-w-[620px] xl:max-w-[700px] flex justify-center items-end">
+            <div className="relative w-full max-w-[220px] sm:max-w-[340px] lg:max-w-[620px] xl:max-w-[700px] flex justify-center items-end">
               <img
                 src={SCHOOL_INFO.heroPhotoUrl}
                 alt="Kidzee Globus International School student in uniform holding a bright orange balloon"
                 referrerPolicy="no-referrer"
-                className="w-full h-auto max-h-[720px] xl:max-h-[820px] object-contain drop-shadow-2xl select-none"
-                style={{ transform: 'translateY(32px) scale(1.25)', transformOrigin: 'bottom center' }}
+                className="w-full h-auto max-h-[300px] sm:max-h-[460px] lg:max-h-[720px] xl:max-h-[820px] object-contain drop-shadow-2xl select-none hero-student-img"
               />
             </div>
           </motion.div>

@@ -131,6 +131,17 @@ export function ActivitiesGallerySection() {
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-[#241038] text-balance">
                 Joyful Activities Every Week
               </h2>
+              <div className="flex flex-wrap items-center gap-2 pt-1">
+                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#FFF4E5] text-[#C2410C] text-xs font-display font-bold border border-[#FED7AA] shadow-sm -rotate-1">
+                  🎨 Art & Craft
+                </span>
+                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#ECFDF3] text-[#15803D] text-xs font-display font-bold border border-[#A7F3D0] shadow-sm rotate-2">
+                  ⚽ Turf Sports
+                </span>
+                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#F3E8FF] text-[#5B158C] text-xs font-display font-bold border border-[#DDD6FE] shadow-sm -rotate-1">
+                  🎭 Celebrations
+                </span>
+              </div>
             </div>
             <p className="text-sm text-[#5C4670] max-w-md">
               Tap any activity pillar below to jump straight to our students in action.
