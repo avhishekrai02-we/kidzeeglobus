@@ -66,20 +66,16 @@ export function AboutSection() {
 
             <div className="space-y-4 text-base sm:text-lg text-[#453159] leading-relaxed">
               <p>
-                The school was established in the year{' '}
-                <strong className="font-semibold text-[#241038]">2017</strong> and was originally
-                located in <strong className="font-semibold text-[#241038]">Gyalshing Bazar</strong>.
-                Today, we have shifted to our bright, welcoming campus at{' '}
-                <strong className="font-semibold text-[#241038]">
-                  Kyongsa, Near District Court, Gayzing, West Sikkim
-                </strong>
-                .
+                Established in 2017, Kidzee Globus International School was founded with a vision to provide quality, holistic, and value-based education to the people of Sikkim. With dedication, passion, and a commitment to nurturing young minds, we have steadily transformed this vision into reality.
               </p>
               <p>
-                We welcome admissions from{' '}
-                <strong className="font-semibold text-[#241038]">Pre-School (Playgroup) to Grade V</strong>,
-                blending playful early-childhood discovery with strong primary-school foundations in
-                science, languages, arts, and outdoor athletics.
+                Today, our school stands as an established and growing institution, strengthened by the trust, faith, and unwavering support of the parents and community of Gyalshing. The increasing number of admissions reflects the confidence families place in us and inspires us to strive for excellence every day.
+              </p>
+              <p>
+                At Kidzee Globus International School, we believe education goes beyond academics. We aim to nurture confident, compassionate, creative, and responsible individuals equipped with the knowledge, skills, and values to succeed in life.
+              </p>
+              <p>
+                As we continue to grow, our commitment remains steadfast—to provide an enriching learning environment, embrace innovation, and uphold the trust of our parents and students, today and for generations to come.
               </p>
             </div>
 
