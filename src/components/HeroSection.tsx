@@ -159,7 +159,7 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
             transition={{ duration: 0.5, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-[400px]">
+            <div className="relative w-full max-w-[500px]">
               {/* Playful offset Sunshine Yellow frame backing */}
               <div
                 aria-hidden="true"
@@ -170,7 +170,7 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
                   src={SCHOOL_INFO.heroPhotoUrl}
                   alt="Kidzee Globus International School student in uniform holding a bright orange balloon"
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-top scale-110"
                 />
                 {/* Measured gradient scrim at bottom for high-contrast caption */}
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#241038]/90 via-[#241038]/45 to-transparent p-5 pt-14">
