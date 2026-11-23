@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { label: 'Programmes', href: '#programmes' },
   { label: 'Activities', href: '#activities' },
   { label: 'Gallery', href: '#gallery' },
+  { label: 'Admissions', href: '#admissions' },
 ];
 
 export function Navbar({ onEnrolClick }: NavbarProps) {
@@ -41,7 +42,7 @@ export function Navbar({ onEnrolClick }: NavbarProps) {
         {/* Zone 2: 5 clean single-line text nav links */}
         <nav
           aria-label="Primary Navigation"
-          className="hidden md:flex items-center gap-7 text-sm font-semibold text-white/90"
+          className="hidden md:flex items-center gap-5 lg:gap-7 text-sm font-semibold text-white/90"
         >
           {NAV_LINKS.map((item) => (
             <a
