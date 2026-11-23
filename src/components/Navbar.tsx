@@ -23,7 +23,7 @@ export function Navbar({ onEnrolClick }: NavbarProps) {
 
   return (
     <header className="sticky top-0 z-40 bg-[#4B0F78] border-b border-white/10 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2 sm:gap-8">
         {/* Zone 1: Single-line brand mark + crest */}
         <a
           href="#home"
@@ -62,7 +62,7 @@ export function Navbar({ onEnrolClick }: NavbarProps) {
               setMobileOpen(false);
               onEnrolClick();
             }}
-            className="px-5 py-2.5 rounded-xl bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-sm tracking-wide shadow-sm transition-transform duration-150 hover:bg-[#ffea54] active:scale-95 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            className="px-3.5 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-xs sm:text-sm tracking-wide shadow-sm transition-transform duration-150 hover:bg-[#ffea54] active:scale-95 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             Enrol Now
           </button>

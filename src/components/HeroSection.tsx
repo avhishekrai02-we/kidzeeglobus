@@ -89,33 +89,76 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
               {SCHOOL_INFO.tagline}
             </h1>
 
-            <p className="text-base sm:text-lg text-white/90 max-w-xl leading-relaxed">
-              Welcome to <strong className="font-semibold text-white">{SCHOOL_INFO.name}</strong> in
-              Kyongsa, Gayzing. A joyful, colourful learning home where curious toddlers and primary
-              learners up to Class V grow with confidence, creativity, and care.
-            </p>
+            {/* Mobile Layout (< lg): Stacked and centered */}
+            <div className="block lg:hidden space-y-4 pt-1">
+              <p className="text-sm sm:text-base text-white/90 leading-relaxed">
+                Welcome to <strong className="font-semibold text-white">{SCHOOL_INFO.name}</strong> in
+                Kyongsa, Gayzing. A joyful, colourful learning home where curious toddlers and primary
+                learners up to Class V grow with confidence, creativity, and care.
+              </p>
 
-            {/* Primary CTA & Secondary Link */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <button
-                type="button"
-                onClick={onEnrolClick}
-                className="group inline-flex items-center gap-3 px-7 py-4 rounded-2xl bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-lg shadow-lg transition-all duration-150 hover:bg-[#ffea54] hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
-              >
-                <span>Enrol Now</span>
-                <ArrowRight className="w-5 h-5 transition-transform duration-150 group-hover:translate-x-1" />
-              </button>
+              <div className="flex flex-wrap items-center gap-3 pt-1">
+                <button
+                  type="button"
+                  onClick={onEnrolClick}
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-2xl bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-sm sm:text-base shadow-lg transition-transform active:scale-95 whitespace-nowrap shrink-0 cursor-pointer"
+                >
+                  <span>Enrol Now</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
 
-              <a
-                href="#programmes"
-                className="inline-flex items-center px-6 py-4 rounded-2xl border-2 border-white/35 text-white font-display font-semibold text-base transition-colors duration-150 hover:bg-white/10 hover:border-white/70 whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#FFE11D]"
-              >
-                Explore Programmes
-              </a>
+                <a
+                  href="#programmes"
+                  className="inline-flex items-center px-4 py-3 rounded-2xl border-2 border-white/35 text-white font-display font-semibold text-xs sm:text-sm whitespace-nowrap shrink-0 transition-colors hover:bg-white/10"
+                >
+                  Explore Programmes
+                </a>
+              </div>
+
+              {/* Mobile Student Portrait Showcase */}
+              <div className="relative w-full max-w-sm sm:max-w-md mx-auto pt-3 flex justify-center items-end">
+                <div
+                  aria-hidden="true"
+                  className="absolute w-64 h-64 rounded-full bg-[#FFE11D]/20 -bottom-4 left-1/2 -translate-x-1/2 pointer-events-none"
+                />
+                <img
+                  src={SCHOOL_INFO.heroPhotoUrl}
+                  alt="Kidzee Globus Student"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-auto max-h-[380px] sm:max-h-[460px] object-contain drop-shadow-2xl select-none relative z-10"
+                />
+              </div>
             </div>
 
-            {/* Interactive 3D Toy Bar connecting directly to the scroll-rotating Three.js scene */}
-            <div className="pt-4 border-t border-white/15">
+            {/* Desktop Content (lg:block): 2-column layout */}
+            <div className="hidden lg:block space-y-6">
+              <p className="text-base sm:text-lg text-white/90 max-w-xl leading-relaxed">
+                Welcome to <strong className="font-semibold text-white">{SCHOOL_INFO.name}</strong> in
+                Kyongsa, Gayzing. A joyful, colourful learning home where curious toddlers and primary
+                learners up to Class V grow with confidence, creativity, and care.
+              </p>
+
+              <div className="flex flex-wrap items-center gap-4 pt-2">
+                <button
+                  type="button"
+                  onClick={onEnrolClick}
+                  className="group inline-flex items-center gap-3 px-7 py-4 rounded-2xl bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-lg shadow-lg transition-all duration-150 hover:bg-[#ffea54] hover:-translate-y-0.5 active:translate-y-0 whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-white"
+                >
+                  <span>Enrol Now</span>
+                  <ArrowRight className="w-5 h-5 transition-transform duration-150 group-hover:translate-x-1" />
+                </button>
+
+                <a
+                  href="#programmes"
+                  className="inline-flex items-center px-6 py-4 rounded-2xl border-2 border-white/35 text-white font-display font-semibold text-base transition-colors duration-150 hover:bg-white/10 hover:border-white/70 whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#FFE11D]"
+                >
+                  Explore Programmes
+                </a>
+              </div>
+            </div>
+
+            {/* Interactive 3D Toy Bar (Desktop) */}
+            <div className="hidden lg:block pt-4 border-t border-white/15">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <p className="text-sm font-medium text-white/85">
                   Scroll to spin our 3D classroom toys, or tap any toy to twirl it now:
@@ -152,47 +195,21 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
             </div>
           </motion.div>
 
-          {/* Right Featured Student Portrait Column */}
+          {/* Right Featured Student Portrait Column - Desktop */}
           <motion.div
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5 flex justify-center lg:justify-end"
+            className="hidden lg:flex lg:col-span-5 justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-[500px]">
-              {/* Playful offset Sunshine Yellow frame backing */}
-              <div
-                aria-hidden="true"
-                className="absolute -inset-3 rounded-[2.25rem] bg-[#FFE11D] rotate-3 shadow-xl"
+            <div className="relative w-full max-w-[620px] xl:max-w-[700px] flex justify-center items-end">
+              <img
+                src={SCHOOL_INFO.heroPhotoUrl}
+                alt="Kidzee Globus International School student in uniform holding a bright orange balloon"
+                referrerPolicy="no-referrer"
+                className="w-full h-auto max-h-[720px] xl:max-h-[820px] object-contain drop-shadow-2xl select-none"
+                style={{ transform: 'translateY(32px) scale(1.25)', transformOrigin: 'bottom center' }}
               />
-              <div className="relative rounded-[2rem] overflow-hidden bg-[#3E0B66] border-4 border-white shadow-2xl aspect-[4/5]">
-                <img
-                  src={SCHOOL_INFO.heroPhotoUrl}
-                  alt="Kidzee Globus International School student in uniform holding a bright orange balloon"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-top scale-110"
-                />
-                {/* Measured gradient scrim at bottom for high-contrast caption */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#241038]/90 via-[#241038]/45 to-transparent p-5 pt-14">
-                  <div className="flex items-center gap-3">
-                    <img
-                      src={SCHOOL_INFO.crestUrl}
-                      alt=""
-                      aria-hidden="true"
-                      referrerPolicy="no-referrer"
-                      className="w-12 h-12 object-contain shrink-0"
-                    />
-                    <div>
-                      <p className="font-display font-bold text-white text-base leading-tight">
-                        {SCHOOL_INFO.motto}
-                      </p>
-                      <p className="text-xs text-[#FFE11D] font-medium mt-0.5">
-                        Established {SCHOOL_INFO.establishedYear} · West Sikkim
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </motion.div>
         </div>

@@ -102,7 +102,7 @@ export function AboutSection() {
         </div>
 
         {/* Full-Width Key Facts Strip below the 2-column split */}
-        <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4 rounded-2xl bg-[#5B158C] text-white p-6 sm:p-7 shadow-lg">
+        <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 rounded-2xl bg-[#5B158C] text-white p-4 sm:p-7 shadow-lg">
           {SCHOOL_FACTS.map((fact) => {
             const Icon = fact.icon;
             return (
