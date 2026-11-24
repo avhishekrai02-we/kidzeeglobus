@@ -109,6 +109,26 @@ export function AboutSection() {
                 </span>
               </div>
             </div>
+
+            {/* Desktop Pillars: Integrity & Originality (filling the left negative space) */}
+            <div className="hidden lg:block space-y-4 max-w-[400px] mx-auto pt-1">
+              <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
+                <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[0].accent }}>
+                  {CORE_VALUES[0].title}
+                </h3>
+                <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
+                  {CORE_VALUES[0].summary}
+                </p>
+              </div>
+              <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
+                <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[2].accent }}>
+                  {CORE_VALUES[2].title}
+                </h3>
+                <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
+                  {CORE_VALUES[2].summary}
+                </p>
+              </div>
+            </div>
           </motion.div>
 
           {/* Right Story & Core Values Column */}
@@ -156,8 +176,28 @@ export function AboutSection() {
               </p>
             </div>
 
-            {/* 4 Pillars from the School Crest */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            {/* Desktop Pillars: Creativity & Nobility */}
+            <div className="hidden lg:block space-y-4 pt-1">
+              <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
+                <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[1].accent }}>
+                  {CORE_VALUES[1].title}
+                </h3>
+                <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
+                  {CORE_VALUES[1].summary}
+                </p>
+              </div>
+              <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
+                <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[3].accent }}>
+                  {CORE_VALUES[3].title}
+                </h3>
+                <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
+                  {CORE_VALUES[3].summary}
+                </p>
+              </div>
+            </div>
+
+            {/* Mobile Pillars: All 4 in a 2-column grid */}
+            <div className="block lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               {CORE_VALUES.map((val) => (
                 <div
                   key={val.title}
