@@ -21,15 +21,33 @@ export function AboutSection() {
         className="absolute -left-24 top-12 w-80 h-80 rounded-full bg-[#FFE11D]/25 pointer-events-none"
       />
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      {/* Decorative background doodles for wide screens */}
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 160 160"
+        className="hidden xl:block absolute left-6 top-1/4 w-32 h-32 text-[#5B158C]/15 pointer-events-none"
+      >
+        <circle cx="80" cy="80" r="60" fill="none" stroke="currentColor" strokeWidth="2" strokeDasharray="5,5" />
+        <circle cx="80" cy="80" r="35" fill="none" stroke="currentColor" strokeWidth="1.5" />
+        <path d="M80,12 L80,26 M80,134 L80,148 M12,80 L26,80 M134,80 L148,80" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+      </svg>
+      <svg
+        aria-hidden="true"
+        viewBox="0 0 140 140"
+        className="hidden xl:block absolute right-8 bottom-28 w-28 h-28 text-[#FFE11D]/40 pointer-events-none"
+      >
+        <path d="M70,10 L78,50 L120,58 L85,82 L95,125 L65,98 L32,120 L42,80 L10,55 L52,50 Z" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" strokeDasharray="4,4" />
+      </svg>
+
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Photo Showcase — matching the joyful yellow-uniform student in the PDF */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-5"
+            className="lg:col-span-5 space-y-6"
           >
             <div className="relative mx-auto max-w-[400px]">
               <div
@@ -65,6 +83,30 @@ export function AboutSection() {
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-105"
                 />
+              </div>
+            </div>
+
+            {/* Playful School Highlight Card under Photo */}
+            <div className="relative mx-auto max-w-[400px] rounded-2xl bg-white/95 border-2 border-[#E7D8F5] p-5 shadow-sm space-y-2.5">
+              <div className="flex items-center gap-2">
+                <span className="text-lg">🌱</span>
+                <h4 className="font-display font-bold text-base text-[#241038]">
+                  Nurturing Sikkim’s Next Generation
+                </h4>
+              </div>
+              <p className="text-xs sm:text-sm text-[#5C4670] leading-relaxed">
+                "Every child is unique, gifted, and full of wonder. We provide caring wings and strong roots to help them thrive."
+              </p>
+              <div className="pt-1 flex flex-wrap gap-2 text-[11px] font-semibold text-[#5B158C]">
+                <span className="px-2.5 py-1 rounded-lg bg-[#F5ECFC] border border-[#E2CEF5]">
+                  💖 Caring Faculty
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-[#FFF9D6] text-[#855B00] border border-[#FBEA88]">
+                  🎨 Creative Expression
+                </span>
+                <span className="px-2.5 py-1 rounded-lg bg-[#EBF9F1] text-[#0D6832] border border-[#C2EED7]">
+                  🏆 Activity-Based
+                </span>
               </div>
             </div>
           </motion.div>
