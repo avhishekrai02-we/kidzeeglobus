@@ -79,7 +79,7 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
             className="w-[58%] lg:w-auto lg:col-span-7 space-y-2 sm:space-y-4 lg:space-y-6 flex-shrink-0"
           >
             <div className="flex flex-wrap items-center gap-2">
-              <p className="text-[11px] sm:text-base font-semibold text-[#FFE11D] tracking-wide leading-snug">
+              <p className="text-sm sm:text-base font-semibold text-[#FFE11D] tracking-wide leading-snug">
                 Admission Open · {SCHOOL_INFO.gradesOffered} · Gayzing
               </p>
               <div className="hidden lg:inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-xs shadow-sm -rotate-2 animate-float">
@@ -88,31 +88,31 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
             </div>
 
             <h1
-              className="font-display font-bold text-white leading-[1.08] tracking-tight text-balance text-xl sm:text-4xl lg:text-[clamp(2.4rem,4.6vw,4.1rem)]"
+              className="font-display font-bold text-white leading-[1.08] tracking-tight text-balance text-2xl sm:text-4xl lg:text-[clamp(2.4rem,4.6vw,4.1rem)]"
             >
               {SCHOOL_INFO.tagline}
             </h1>
 
             {/* Mobile Layout (< lg): Compact side-by-side text & buttons */}
-            <div className="block lg:hidden space-y-2 pt-0.5">
-              <p className="text-[11px] sm:text-sm text-white/90 leading-snug">
+            <div className="block lg:hidden space-y-2.5 pt-1">
+              <p className="text-xs sm:text-base text-white/90 leading-snug">
                 Welcome to <strong className="font-semibold text-white">{SCHOOL_INFO.name}</strong> in
                 Kyongsa, Gayzing. A joyful, colourful learning home for curious toddlers and primary learners.
               </p>
 
-              <div className="flex flex-wrap items-center gap-1.5 pt-0.5">
+              <div className="flex flex-wrap items-center gap-2 pt-0.5">
                 <button
                   type="button"
                   onClick={onEnrolClick}
-                  className="inline-flex items-center gap-1 px-3 py-1.5 sm:px-4 sm:py-2 rounded-xl bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-xs sm:text-sm shadow-md transition-transform active:scale-95 whitespace-nowrap shrink-0 cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-sm shadow-md transition-transform active:scale-95 whitespace-nowrap shrink-0 cursor-pointer"
                 >
                   <span>Enrol Now</span>
-                  <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </button>
 
                 <a
                   href="#programmes"
-                  className="inline-flex items-center px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-xl border border-white/40 text-white font-display font-semibold text-[11px] sm:text-xs whitespace-nowrap shrink-0 transition-colors hover:bg-white/10"
+                  className="inline-flex items-center px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-white/40 text-white font-display font-semibold text-xs sm:text-sm whitespace-nowrap shrink-0 transition-colors hover:bg-white/10"
                 >
                   Explore
                 </a>
