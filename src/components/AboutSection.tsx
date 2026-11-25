@@ -39,8 +39,8 @@ export function AboutSection() {
         <path d="M70,10 L78,50 L120,58 L85,82 L95,125 L65,98 L32,120 L42,80 L10,55 L52,50 Z" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round" strokeDasharray="4,4" />
       </svg>
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div className="relative max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Photo Showcase — matching the joyful yellow-uniform student in the PDF */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -109,26 +109,6 @@ export function AboutSection() {
                 </span>
               </div>
             </div>
-
-            {/* Desktop Pillars: Integrity & Originality (filling the left negative space) */}
-            <div className="hidden lg:block space-y-4 max-w-[400px] mx-auto pt-1">
-              <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
-                <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[0].accent }}>
-                  {CORE_VALUES[0].title}
-                </h3>
-                <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
-                  {CORE_VALUES[0].summary}
-                </p>
-              </div>
-              <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
-                <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[2].accent }}>
-                  {CORE_VALUES[2].title}
-                </h3>
-                <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
-                  {CORE_VALUES[2].summary}
-                </p>
-              </div>
-            </div>
           </motion.div>
 
           {/* Right Story & Core Values Column */}
@@ -175,64 +155,65 @@ export function AboutSection() {
                 As we continue to grow, our commitment remains steadfast—to provide an enriching learning environment, embrace innovation, and uphold the trust of our parents and students, today and for generations to come.
               </p>
             </div>
-
-            {/* Desktop Pillars: Creativity & Nobility */}
-            <div className="hidden lg:block space-y-4 pt-1">
-              <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
-                <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[1].accent }}>
-                  {CORE_VALUES[1].title}
-                </h3>
-                <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
-                  {CORE_VALUES[1].summary}
-                </p>
-              </div>
-              <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
-                <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[3].accent }}>
-                  {CORE_VALUES[3].title}
-                </h3>
-                <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
-                  {CORE_VALUES[3].summary}
-                </p>
-              </div>
-            </div>
-
-            {/* Mobile Pillars: All 4 in a 2-column grid */}
-            <div className="block lg:hidden grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              {CORE_VALUES.map((val) => (
-                <div
-                  key={val.title}
-                  className="rounded-2xl bg-white border border-[#E7D8F5] p-5 transition-transform duration-150 hover:-translate-y-0.5"
-                >
-                  <h3
-                    className="font-display font-bold text-lg"
-                    style={{ color: val.accent }}
-                  >
-                    {val.title}
-                  </h3>
-                  <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
-                    {val.summary}
-                  </p>
-                </div>
-              ))}
-            </div>
           </motion.div>
         </div>
 
-        {/* Full-Width Key Facts Strip below the 2-column split */}
-        <div className="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 rounded-2xl bg-[#5B158C] text-white p-4 sm:p-7 shadow-lg">
+        {/* 4 Core Value Cards in an equal 2-column grid:
+            Row 1: Integrity (left), Creativity (right)
+            Row 2: Originality (left), Nobility (right) */}
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+          <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
+            <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[0].accent }}>
+              {CORE_VALUES[0].title}
+            </h3>
+            <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
+              {CORE_VALUES[0].summary}
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
+            <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[1].accent }}>
+              {CORE_VALUES[1].title}
+            </h3>
+            <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
+              {CORE_VALUES[1].summary}
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
+            <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[2].accent }}>
+              {CORE_VALUES[2].title}
+            </h3>
+            <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
+              {CORE_VALUES[2].summary}
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
+            <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[3].accent }}>
+              {CORE_VALUES[3].title}
+            </h3>
+            <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
+              {CORE_VALUES[3].summary}
+            </p>
+          </div>
+        </div>
+
+        {/* Full-Width Key Facts Strip below the 2-column split - made wider & longer to fill widescreen negative space */}
+        <div className="mt-14 w-full grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 rounded-3xl bg-[#5B158C] text-white p-6 sm:p-8 shadow-xl border border-white/10">
           {SCHOOL_FACTS.map((fact) => {
             const Icon = fact.icon;
             return (
               <div
                 key={fact.label}
-                className="flex items-start gap-3.5 sm:px-3"
+                className="flex items-center gap-4 sm:px-4"
               >
-                <div className="w-10 h-10 rounded-xl bg-[#FFE11D] text-[#3E0B66] flex items-center justify-center shrink-0">
-                  <Icon className="w-5 h-5" />
+                <div className="w-12 h-12 rounded-2xl bg-[#FFE11D] text-[#3E0B66] flex items-center justify-center shrink-0 shadow-md">
+                  <Icon className="w-6 h-6" />
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-white/75">{fact.label}</p>
-                  <p className="font-display font-bold text-base sm:text-lg text-white tabular-nums mt-0.5">
+                  <p className="text-xs font-semibold text-white/80 uppercase tracking-wider">{fact.label}</p>
+                  <p className="font-display font-bold text-base sm:text-xl text-white tabular-nums mt-0.5">
                     {fact.value}
                   </p>
                 </div>

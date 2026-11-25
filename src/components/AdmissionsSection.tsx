@@ -106,8 +106,8 @@ export function AdmissionsSection({ preselectedClass }: AdmissionsSectionProps) 
         id="admissions"
         className="relative z-20 py-20 sm:py-24 bg-[#FBF8FF]"
       >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             {/* Left Info & Steps Column */}
             <div className="lg:col-span-5 space-y-6">
               <div className="space-y-3">
@@ -146,43 +146,6 @@ export function AdmissionsSection({ preselectedClass }: AdmissionsSectionProps) 
                     </p>
                   </div>
                 ))}
-              </div>
-
-              {/* Campus Visit Details */}
-              <div className="rounded-2xl bg-[#5B158C] text-white p-6 space-y-3.5">
-                <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-[#FFE11D] shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-display font-bold text-sm text-[#FFE11D]">
-                      Campus Address
-                    </p>
-                    <p className="text-sm text-white/90 mt-0.5">
-                      {SCHOOL_INFO.currentLocation}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Clock className="w-5 h-5 text-[#FFE11D] shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-display font-bold text-sm text-[#FFE11D]">
-                      Admissions Desk Hours
-                    </p>
-                    <p className="text-sm text-white/90 mt-0.5">
-                      {SCHOOL_INFO.admissionsDeskHours}
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-[#FFE11D] shrink-0 mt-0.5" />
-                  <div>
-                    <p className="font-display font-bold text-sm text-[#FFE11D]">
-                      School Office
-                    </p>
-                    <p className="text-sm text-white/90 mt-0.5">
-                      {SCHOOL_INFO.schoolHours}
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -386,6 +349,51 @@ export function AdmissionsSection({ preselectedClass }: AdmissionsSectionProps) 
                     </button>
                   </form>
                 )}
+              </div>
+            </div>
+          </div>
+
+          {/* Full-Width Campus Visit Details Strip */}
+          <div className="mt-12 w-full grid grid-cols-1 lg:grid-cols-3 gap-6 rounded-3xl bg-[#5B158C] text-white p-6 sm:p-8 shadow-xl border border-white/10">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#FFE11D] text-[#3E0B66] flex items-center justify-center shrink-0 shadow-md">
+                <MapPin className="w-6 h-6" />
+              </div>
+              <div>
+                <p className="font-display font-bold text-sm text-[#FFE11D] uppercase tracking-wider">
+                  Campus Address
+                </p>
+                <p className="text-sm sm:text-base text-white/95 mt-0.5 font-medium">
+                  {SCHOOL_INFO.currentLocation}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#FFE11D] text-[#3E0B66] flex items-center justify-center shrink-0 shadow-md">
+                <Clock className="w-6 h-6" />
+              </div>
+              <div>
+                <p className="font-display font-bold text-sm text-[#FFE11D] uppercase tracking-wider">
+                  Admissions Desk Hours
+                </p>
+                <p className="text-sm sm:text-base text-white/95 mt-0.5 font-medium">
+                  {SCHOOL_INFO.admissionsDeskHours}
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-[#FFE11D] text-[#3E0B66] flex items-center justify-center shrink-0 shadow-md">
+                <Phone className="w-6 h-6" />
+              </div>
+              <div>
+                <p className="font-display font-bold text-sm text-[#FFE11D] uppercase tracking-wider">
+                  School Office
+                </p>
+                <p className="text-sm sm:text-base text-white/95 mt-0.5 font-medium">
+                  {SCHOOL_INFO.schoolHours}
+                </p>
               </div>
             </div>
           </div>
