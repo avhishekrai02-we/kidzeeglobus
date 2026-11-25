@@ -21,7 +21,7 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-[#5B158C] text-white pt-10 pb-24 sm:pt-14 sm:pb-32"
+      className="relative overflow-hidden bg-[#5B158C] text-white pt-6 pb-24 sm:pt-14 sm:pb-32"
     >
       {/* Sweeping Sunshine Yellow & Deep Purple Wave Art echoing the school PDF theme */}
       <svg
@@ -88,14 +88,14 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
             </div>
 
             <h1
-              className="font-display font-bold text-white leading-[1.08] tracking-tight text-balance text-2xl sm:text-4xl lg:text-[clamp(2.4rem,4.6vw,4.1rem)]"
+              className="font-display font-bold text-white leading-[1.08] tracking-tight text-balance text-3xl sm:text-4xl lg:text-[clamp(2.4rem,4.6vw,4.1rem)]"
             >
               {SCHOOL_INFO.tagline}
             </h1>
 
             {/* Mobile Layout (< lg): Compact side-by-side text & buttons */}
             <div className="block lg:hidden space-y-2.5 pt-1">
-              <p className="text-xs sm:text-base text-white/90 leading-snug">
+              <p className="text-sm sm:text-base text-white/90 leading-snug">
                 Welcome to <strong className="font-semibold text-white">{SCHOOL_INFO.name}</strong> in
                 Kyongsa, Gayzing. A joyful, colourful learning home for curious toddlers and primary learners.
               </p>
