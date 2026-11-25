@@ -21,7 +21,7 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-[#5B158C] text-white pt-6 pb-24 sm:pt-14 sm:pb-32"
+      className="relative overflow-hidden bg-[#5B158C] text-white pt-6 pb-8 sm:pt-14 sm:pb-32"
     >
       {/* Sweeping Sunshine Yellow & Deep Purple Wave Art echoing the school PDF theme */}
       <svg
@@ -69,14 +69,14 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
         />
       </svg>
 
-      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex lg:grid lg:grid-cols-12 gap-2 sm:gap-6 lg:gap-12 items-end lg:items-center">
+      <div className="relative z-20 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="flex flex-col lg:grid lg:grid-cols-12 gap-4 sm:gap-6 lg:gap-12 items-center">
           {/* Left Content Column */}
           <motion.div
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-            className="w-[58%] lg:w-auto lg:col-span-7 space-y-2 sm:space-y-4 lg:space-y-6 flex-shrink-0"
+            className="w-full lg:w-auto lg:col-span-7 space-y-3 sm:space-y-4 lg:space-y-6 flex-shrink-0"
           >
             <div className="flex flex-wrap items-center gap-2">
               <p className="text-sm sm:text-base font-semibold text-[#FFE11D] tracking-wide leading-snug">
@@ -93,28 +93,28 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
               {SCHOOL_INFO.tagline}
             </h1>
 
-            {/* Mobile Layout (< lg): Compact side-by-side text & buttons */}
-            <div className="block lg:hidden space-y-2.5 pt-1">
-              <p className="text-sm sm:text-base text-white/90 leading-snug">
+            {/* Mobile Layout (< lg): Full-width text & buttons above large portrait */}
+            <div className="block lg:hidden space-y-3 pt-1">
+              <p className="text-sm sm:text-base text-white/90 leading-relaxed">
                 Welcome to <strong className="font-semibold text-white">{SCHOOL_INFO.name}</strong> in
                 Kyongsa, Gayzing. A joyful, colourful learning home for curious toddlers and primary learners.
               </p>
 
-              <div className="flex flex-wrap items-center gap-2 pt-0.5">
+              <div className="flex flex-wrap items-center gap-3 pt-0.5">
                 <button
                   type="button"
                   onClick={onEnrolClick}
-                  className="inline-flex items-center gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-sm shadow-md transition-transform active:scale-95 whitespace-nowrap shrink-0 cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2.5 sm:px-5 sm:py-2.5 rounded-xl bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-sm shadow-md transition-transform active:scale-95 whitespace-nowrap shrink-0 cursor-pointer"
                 >
                   <span>Enrol Now</span>
-                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                  <ArrowRight className="w-4 h-4" />
                 </button>
 
                 <a
                   href="#programmes"
-                  className="inline-flex items-center px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl border border-white/40 text-white font-display font-semibold text-xs sm:text-sm whitespace-nowrap shrink-0 transition-colors hover:bg-white/10"
+                  className="inline-flex items-center px-4 py-2.5 rounded-xl border border-white/40 text-white font-display font-semibold text-sm whitespace-nowrap shrink-0 transition-colors hover:bg-white/10"
                 >
-                  Explore
+                  Explore Programmes
                 </a>
               </div>
             </div>
@@ -193,14 +193,14 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
-            className="w-[42%] lg:w-auto lg:col-span-5 flex justify-center lg:justify-end items-end flex-shrink-0"
+            className="w-full lg:w-auto lg:col-span-5 flex justify-center lg:justify-end items-end flex-shrink-0"
           >
-            <div className="relative w-full max-w-[220px] sm:max-w-[340px] lg:max-w-[620px] xl:max-w-[700px] flex justify-center items-end">
+            <div className="relative w-full max-w-sm lg:max-w-[620px] xl:max-w-[700px] flex justify-center items-end">
               <img
                 src={SCHOOL_INFO.heroPhotoUrl}
                 alt="Kidzee Globus International School student in uniform holding a bright orange balloon"
                 referrerPolicy="no-referrer"
-                className="w-full h-auto max-h-[300px] sm:max-h-[460px] lg:max-h-[720px] xl:max-h-[820px] object-contain drop-shadow-2xl select-none hero-student-img"
+                className="w-full h-auto max-h-[440px] lg:max-h-[720px] xl:max-h-[820px] object-contain drop-shadow-2xl select-none hero-student-img"
               />
             </div>
           </motion.div>
