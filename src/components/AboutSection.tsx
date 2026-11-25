@@ -88,8 +88,7 @@ export function AboutSection() {
 
             {/* Playful School Highlight Card under Photo */}
             <div className="relative mx-auto max-w-[400px] rounded-2xl bg-white/95 border-2 border-[#E7D8F5] p-5 shadow-sm space-y-2.5">
-              <div className="flex items-center gap-2">
-                <span className="text-lg">🌱</span>
+              <div>
                 <h4 className="font-display font-bold text-base text-[#241038]">
                   Nurturing Sikkim’s Next Generation
                 </h4>
@@ -99,13 +98,13 @@ export function AboutSection() {
               </p>
               <div className="pt-1 flex flex-wrap gap-2 text-[11px] font-semibold text-[#5B158C]">
                 <span className="px-2.5 py-1 rounded-lg bg-[#F5ECFC] border border-[#E2CEF5]">
-                  💖 Caring Faculty
+                  Caring Faculty
                 </span>
                 <span className="px-2.5 py-1 rounded-lg bg-[#FFF9D6] text-[#855B00] border border-[#FBEA88]">
-                  🎨 Creative Expression
+                  Creative Expression
                 </span>
                 <span className="px-2.5 py-1 rounded-lg bg-[#EBF9F1] text-[#0D6832] border border-[#C2EED7]">
-                  🏆 Activity-Based
+                  Activity-Based
                 </span>
               </div>
             </div>
