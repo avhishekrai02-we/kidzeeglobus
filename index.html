@@ -42,7 +42,11 @@
   #home .hero-student-img { max-height: 400px !important; }
 }
 @media (min-width: 1024px) {
-  .hero-student-img { transform: translateY(32px) scale(1.25); transform-origin: bottom center; }
+  #home .hero-layout { display: grid !important; grid-template-columns: repeat(12, minmax(0, 1fr)) !important; align-items: center !important; }
+  #home .hero-text-col { width: auto !important; }
+  #home .hero-img-col { width: auto !important; }
+  #home .hero-img-wrap { max-width: 620px !important; }
+  #home .hero-student-img { max-height: 720px !important; transform: translateY(32px) scale(1.25); transform-origin: bottom center; }
 }
 
 </style>
