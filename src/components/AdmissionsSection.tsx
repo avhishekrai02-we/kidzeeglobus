@@ -104,7 +104,7 @@ export function AdmissionsSection({ preselectedClass }: AdmissionsSectionProps) 
     <>
       <section
         id="admissions"
-        className="relative z-20 py-20 sm:py-24 bg-[#FBF8FF]"
+        className="relative z-20 py-12 sm:py-24 bg-[#FBF8FF]"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
@@ -151,7 +151,7 @@ export function AdmissionsSection({ preselectedClass }: AdmissionsSectionProps) 
 
             {/* Right Validated Admissions Form Column */}
             <div className="lg:col-span-7">
-              <div className="rounded-3xl bg-white border border-[#E7D8F5] shadow-xl p-6 sm:p-9">
+              <div className="rounded-3xl bg-white border border-[#E7D8F5] shadow-xl p-5 sm:p-9">
                 {submitted ? (
                   <div
                     role="status"
@@ -354,7 +354,7 @@ export function AdmissionsSection({ preselectedClass }: AdmissionsSectionProps) 
           </div>
 
           {/* Full-Width Campus Visit Details Strip */}
-          <div className="mt-12 w-full grid grid-cols-1 lg:grid-cols-3 gap-6 rounded-3xl bg-[#5B158C] text-white p-6 sm:p-8 shadow-xl border border-white/10">
+          <div className="mt-8 w-full grid grid-cols-1 lg:grid-cols-3 gap-5 sm:gap-6 rounded-3xl bg-[#5B158C] text-white p-5 sm:p-8 shadow-xl border border-white/10">
             <div className="flex items-center gap-4">
               <div className="w-12 h-12 rounded-2xl bg-[#FFE11D] text-[#3E0B66] flex items-center justify-center shrink-0 shadow-md">
                 <MapPin className="w-6 h-6" />
@@ -423,7 +423,7 @@ export function AdmissionsSection({ preselectedClass }: AdmissionsSectionProps) 
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-6 text-sm text-white/80">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm text-white/80">
             <a href="#home" className="hover:text-[#FFE11D] transition-colors">
               Home
             </a>

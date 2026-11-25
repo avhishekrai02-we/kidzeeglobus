@@ -55,7 +55,7 @@ export function ProgrammesSection({ onApplyForClass }: ProgrammesSectionProps) {
   return (
     <section
       id="programmes"
-      className="relative z-20 bg-[#5B158C] text-white py-20 sm:py-28 overflow-hidden"
+      className="relative z-20 bg-[#5B158C] text-white py-12 sm:py-28 overflow-hidden"
     >
       {/* Top & bottom wave edges + playful yellow organic curves matching PDF */}
       <svg
@@ -88,7 +88,7 @@ export function ProgrammesSection({ onApplyForClass }: ProgrammesSectionProps) {
           <h2 className="font-display font-bold text-3xl sm:text-5xl text-white text-balance">
             Our Programmes
           </h2>
-          <div className="flex flex-wrap items-center gap-2 pt-1 pb-1">
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-1 pb-1">
             <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#FFE11D] text-[#3E0B66] text-xs font-display font-bold shadow-md -rotate-2 animate-float">
               🧸 Joyful Sensory Play
             </span>
@@ -103,7 +103,7 @@ export function ProgrammesSection({ onApplyForClass }: ProgrammesSectionProps) {
         </div>
 
         {/* Interactive Age-to-Class Finder */}
-        <div className="mt-10 rounded-3xl bg-[#3E0B66] border border-white/15 p-6 sm:p-7 shadow-xl">
+        <div className="mt-8 rounded-3xl bg-[#3E0B66] border border-white/15 p-4 sm:p-7 shadow-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
             <div className="lg:col-span-6 space-y-3">
               <h3 className="font-display font-bold text-xl text-white">
@@ -178,7 +178,7 @@ export function ProgrammesSection({ onApplyForClass }: ProgrammesSectionProps) {
                 }`}
               >
                 {/* Photo Header */}
-                <div className="relative h-64 sm:h-72 overflow-hidden bg-[#3E0B66]">
+                <div className="relative h-56 sm:h-72 overflow-hidden bg-[#3E0B66]">
                   <img
                     src={programme.image}
                     alt={programme.imageAlt}

@@ -121,7 +121,7 @@ export function ActivitiesGallerySection() {
   return (
     <>
       {/* Activities Pillar Band */}
-      <section id="activities" className="relative z-20 py-20 bg-[#FBF8FF]">
+      <section id="activities" className="relative z-20 py-12 sm:py-24 bg-[#FBF8FF]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div className="space-y-2 max-w-2xl">
@@ -183,7 +183,7 @@ export function ActivitiesGallerySection() {
       {/* Gallery Showcase Band — matching the deep purple + sunshine yellow PDF Gallery */}
       <section
         id="gallery"
-        className="relative z-20 py-20 sm:py-24 bg-[#5B158C] text-white overflow-hidden"
+        className="relative z-20 py-12 sm:py-24 bg-[#5B158C] text-white overflow-hidden"
       >
         {/* Playful yellow organic wave sweep on bottom right echoing PDF */}
         <div

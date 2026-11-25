@@ -79,7 +79,7 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
             className="w-[58%] lg:w-auto lg:col-span-7 space-y-2 sm:space-y-4 lg:space-y-6 flex-shrink-0"
           >
             <div className="flex flex-wrap items-center gap-2">
-              <p className="text-[11px] sm:text-base font-semibold text-[#FFE11D] tracking-wide whitespace-nowrap overflow-hidden text-ellipsis">
+              <p className="text-[11px] sm:text-base font-semibold text-[#FFE11D] tracking-wide leading-snug">
                 Admission Open · {SCHOOL_INFO.gradesOffered} · Gayzing
               </p>
               <div className="hidden lg:inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-xs shadow-sm -rotate-2 animate-float">
@@ -95,7 +95,7 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
 
             {/* Mobile Layout (< lg): Compact side-by-side text & buttons */}
             <div className="block lg:hidden space-y-2 pt-0.5">
-              <p className="text-[11px] sm:text-sm text-white/90 leading-snug line-clamp-3 sm:line-clamp-none">
+              <p className="text-[11px] sm:text-sm text-white/90 leading-snug">
                 Welcome to <strong className="font-semibold text-white">{SCHOOL_INFO.name}</strong> in
                 Kyongsa, Gayzing. A joyful, colourful learning home for curious toddlers and primary learners.
               </p>

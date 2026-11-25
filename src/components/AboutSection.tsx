@@ -13,7 +13,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="relative z-20 py-20 sm:py-24 bg-[#FBF8FF] overflow-hidden"
+      className="relative z-20 py-12 sm:py-24 bg-[#FBF8FF] overflow-hidden"
     >
       {/* Subtle diagonal lavender band inspired by the PDF About section */}
       <div
@@ -200,7 +200,7 @@ export function AboutSection() {
         </div>
 
         {/* Full-Width Key Facts Strip below the 2-column split - made wider & longer to fill widescreen negative space */}
-        <div className="mt-14 w-full grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 rounded-3xl bg-[#5B158C] text-white p-6 sm:p-8 shadow-xl border border-white/10">
+        <div className="mt-10 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 rounded-3xl bg-[#5B158C] text-white p-5 sm:p-8 shadow-xl border border-white/10">
           {SCHOOL_FACTS.map((fact) => {
             const Icon = fact.icon;
             return (
