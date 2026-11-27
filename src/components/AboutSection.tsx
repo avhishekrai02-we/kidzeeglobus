@@ -57,7 +57,7 @@ export function AboutSection({ isFullPage = false, onReadMore, onBack }: AboutSe
             </button>
           </div>
         )}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
           {/* Left Photo Showcase — matching the joyful yellow-uniform student in the PDF */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -102,29 +102,6 @@ export function AboutSection({ isFullPage = false, onReadMore, onBack }: AboutSe
                 />
               </div>
             </div>
-
-            {/* Playful School Highlight Card under Photo */}
-            <div className="relative mx-auto max-w-[400px] rounded-2xl bg-white/95 border-2 border-[#E7D8F5] p-5 shadow-sm space-y-2.5">
-              <div>
-                <h4 className="font-display font-bold text-base text-[#241038]">
-                  Nurturing Sikkim’s Next Generation
-                </h4>
-              </div>
-              <p className="text-xs sm:text-sm text-[#5C4670] leading-relaxed">
-                "Every child is unique, gifted, and full of wonder. We provide caring wings and strong roots to help them thrive."
-              </p>
-              <div className="pt-1 flex flex-wrap gap-2 text-[11px] font-semibold text-[#5B158C]">
-                <span className="px-2.5 py-1 rounded-lg bg-[#F5ECFC] border border-[#E2CEF5]">
-                  Caring Faculty
-                </span>
-                <span className="px-2.5 py-1 rounded-lg bg-[#FFF9D6] text-[#855B00] border border-[#FBEA88]">
-                  Creative Expression
-                </span>
-                <span className="px-2.5 py-1 rounded-lg bg-[#EBF9F1] text-[#0D6832] border border-[#C2EED7]">
-                  Activity-Based
-                </span>
-              </div>
-            </div>
           </motion.div>
 
           {/* Right Story & Core Values Column */}
@@ -135,33 +112,19 @@ export function AboutSection({ isFullPage = false, onReadMore, onBack }: AboutSe
             transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 space-y-6"
           >
-            <div className="space-y-3">
+            <div className="space-y-2">
+              <h2 className="font-display font-bold text-3xl sm:text-5xl text-[#241038] text-balance leading-tight">
+                About Us
+              </h2>
               <p className="text-sm font-semibold text-[#5B158C] tracking-wide">
                 Our Story · {SCHOOL_INFO.motto}
               </p>
-              <h2 className="font-display font-bold text-3xl sm:text-4xl text-[#241038] text-balance leading-tight">
-                About Kidzee Globus International School
-              </h2>
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 160 12"
-                className="w-40 h-2.5 text-[#FFE11D] mt-1.5"
-              >
-                <path
-                  d="M0,6 Q20,0 40,6 T80,6 T120,6 T160,6"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="4"
-                  strokeLinecap="round"
-                />
-              </svg>
             </div>
-
             <div className="space-y-4 text-base sm:text-lg text-[#453159] leading-relaxed">
               <p>
                 Established in 2017, Kidzee Globus International School was founded with a vision to provide quality, holistic, and value-based education to the people of Sikkim. With dedication, passion, and a commitment to nurturing young minds, we have steadily transformed this vision into reality.
               </p>
-              <p>
+              <p className={isFullPage ? undefined : 'hidden lg:block'}>
                 Today, our school stands as an established and growing institution, strengthened by the trust, faith, and unwavering support of the parents and community of Gyalshing. The increasing number of admissions reflects the confidence families place in us and inspires us to strive for excellence every day.
               </p>
               {isFullPage && (
@@ -186,6 +149,29 @@ export function AboutSection({ isFullPage = false, onReadMore, onBack }: AboutSe
               </div>
             )}
           </motion.div>
+        </div>
+
+        {/* Full-Width School Highlight Card below the 2-column split */}
+        <div className="mt-10 w-full rounded-2xl bg-white/95 border-2 border-[#E7D8F5] p-6 sm:p-7 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="space-y-1.5 max-w-2xl">
+            <h4 className="font-display font-bold text-lg text-[#241038]">
+              Nurturing Sikkim’s Next Generation
+            </h4>
+            <p className="text-sm text-[#5C4670] leading-relaxed">
+              "Every child is unique, gifted, and full of wonder. We provide caring wings and strong roots to help them thrive."
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 text-xs font-semibold text-[#5B158C] shrink-0">
+            <span className="px-3 py-1.5 rounded-lg bg-[#F5ECFC] border border-[#E2CEF5]">
+              Caring Faculty
+            </span>
+            <span className="px-3 py-1.5 rounded-lg bg-[#FFF9D6] text-[#855B00] border border-[#FBEA88]">
+              Creative Expression
+            </span>
+            <span className="px-3 py-1.5 rounded-lg bg-[#EBF9F1] text-[#0D6832] border border-[#C2EED7]">
+              Activity-Based
+            </span>
+          </div>
         </div>
 
         {isFullPage && (
