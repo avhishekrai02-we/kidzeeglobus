@@ -4,22 +4,26 @@ import { SCHOOL_INFO } from '../data/schoolData';
 
 interface NavbarProps {
   onEnrolClick: () => void;
+  onNavigate?: (href: string) => void;
 }
 
 const NAV_LINKS = [
   { label: 'Home', href: '#home' },
-  { label: 'About Us', href: '#about' },
+  { label: 'About Us', href: './about.html' },
   { label: 'Programmes', href: '#programmes' },
   { label: 'Activities', href: '#activities' },
   { label: 'Gallery', href: '#gallery' },
   { label: 'Admissions', href: '#admissions' },
 ];
 
-export function Navbar({ onEnrolClick }: NavbarProps) {
+export function Navbar({ onEnrolClick, onNavigate }: NavbarProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const handleNavClick = () => {
+  const handleNavClick = (href?: string) => {
     setMobileOpen(false);
+    if (href && onNavigate) {
+      onNavigate(href);
+    }
   };
 
   return (
@@ -28,6 +32,7 @@ export function Navbar({ onEnrolClick }: NavbarProps) {
         {/* Zone 1: Single-line brand mark + crest */}
         <a
           href="#home"
+          onClick={() => handleNavClick('#home')}
           className="flex items-center gap-3 text-white font-display font-bold text-lg sm:text-xl tracking-tight whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFE11D] rounded-md"
         >
           <img
@@ -48,6 +53,7 @@ export function Navbar({ onEnrolClick }: NavbarProps) {
             <a
               key={item.href}
               href={item.href}
+              onClick={() => handleNavClick(item.href)}
               className="relative py-1 whitespace-nowrap shrink-0 transition-colors duration-150 hover:text-[#FFE11D] after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-0.5 after:w-0 after:bg-[#FFE11D] after:transition-all after:duration-150 hover:after:w-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FFE11D] rounded-sm"
             >
               {item.label}
@@ -91,7 +97,7 @@ export function Navbar({ onEnrolClick }: NavbarProps) {
               <a
                 key={item.href}
                 href={item.href}
-                onClick={handleNavClick}
+                onClick={() => handleNavClick(item.href)}
                 className="px-3 py-3 rounded-lg text-base font-semibold text-white hover:bg-white/10 hover:text-[#FFE11D] transition-colors"
               >
                 {item.label}

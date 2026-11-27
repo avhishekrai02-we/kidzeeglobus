@@ -2,6 +2,12 @@ import { MapPin, Calendar, GraduationCap, ShieldCheck } from 'lucide-react';
 import { motion } from 'motion/react';
 import { CORE_VALUES, SCHOOL_INFO } from '../data/schoolData';
 
+interface AboutSectionProps {
+  isFullPage?: boolean;
+  onReadMore?: () => void;
+  onBack?: () => void;
+}
+
 const SCHOOL_FACTS = [
   { icon: Calendar, label: 'Established', value: '2017' },
   { icon: GraduationCap, label: 'Classes', value: 'Playgroup – Class V' },
@@ -9,7 +15,7 @@ const SCHOOL_FACTS = [
   { icon: MapPin, label: 'Campus', value: 'Kyongsa, Gayzing' },
 ];
 
-export function AboutSection() {
+export function AboutSection({ isFullPage = false, onReadMore, onBack }: AboutSectionProps) {
   return (
     <section
       id="about"
@@ -40,6 +46,17 @@ export function AboutSection() {
       </svg>
 
       <div className="relative max-w-7xl 2xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        {isFullPage && onBack && (
+          <div className="mb-8">
+            <button
+              type="button"
+              onClick={onBack}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-[#E7D8F5] text-[#5B158C] font-display font-bold text-sm shadow-sm hover:bg-[#5B158C] hover:text-white transition-colors cursor-pointer"
+            >
+              <span>← Back to Home</span>
+            </button>
+          </div>
+        )}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Photo Showcase — matching the joyful yellow-uniform student in the PDF */}
           <motion.div
@@ -147,79 +164,107 @@ export function AboutSection() {
               <p>
                 Today, our school stands as an established and growing institution, strengthened by the trust, faith, and unwavering support of the parents and community of Gyalshing. The increasing number of admissions reflects the confidence families place in us and inspires us to strive for excellence every day.
               </p>
-              <p>
-                At Kidzee Globus International School, we believe education goes beyond academics. We aim to nurture confident, compassionate, creative, and responsible individuals equipped with the knowledge, skills, and values to succeed in life.
-              </p>
-              <p>
-                As we continue to grow, our commitment remains steadfast—to provide an enriching learning environment, embrace innovation, and uphold the trust of our parents and students, today and for generations to come.
-              </p>
+              {isFullPage && (
+                <>
+                  <p>
+                    At Kidzee Globus International School, we believe education goes beyond academics. We aim to nurture confident, compassionate, creative, and responsible individuals equipped with the knowledge, skills, and values to succeed in life.
+                  </p>
+                  <p>
+                    As we continue to grow, our commitment remains steadfast—to provide an enriching learning environment, embrace innovation, and uphold the trust of our parents and students, today and for generations to come.
+                  </p>
+                </>
+              )}
             </div>
+            {!isFullPage && (
+              <div className="pt-2">
+                <a
+                  href="./about.html"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-[#5B158C] text-white font-display font-bold text-sm shadow-md hover:bg-[#3E0B66] transition-colors cursor-pointer"
+                >
+                  <span>Read More About Us →</span>
+                </a>
+              </div>
+            )}
           </motion.div>
         </div>
 
-        {/* 4 Core Value Cards in an equal 2-column grid:
-            Row 1: Integrity (left), Creativity (right)
-            Row 2: Originality (left), Nobility (right) */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
-          <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
-            <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[0].accent }}>
-              {CORE_VALUES[0].title}
-            </h3>
-            <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
-              {CORE_VALUES[0].summary}
-            </p>
-          </div>
-
-          <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
-            <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[1].accent }}>
-              {CORE_VALUES[1].title}
-            </h3>
-            <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
-              {CORE_VALUES[1].summary}
-            </p>
-          </div>
-
-          <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
-            <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[2].accent }}>
-              {CORE_VALUES[2].title}
-            </h3>
-            <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
-              {CORE_VALUES[2].summary}
-            </p>
-          </div>
-
-          <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
-            <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[3].accent }}>
-              {CORE_VALUES[3].title}
-            </h3>
-            <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
-              {CORE_VALUES[3].summary}
-            </p>
-          </div>
-        </div>
-
-        {/* Full-Width Key Facts Strip below the 2-column split - made wider & longer to fill widescreen negative space */}
-        <div className="mt-10 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 rounded-3xl bg-[#5B158C] text-white p-5 sm:p-8 shadow-xl border border-white/10">
-          {SCHOOL_FACTS.map((fact) => {
-            const Icon = fact.icon;
-            return (
-              <div
-                key={fact.label}
-                className="flex items-center gap-4 sm:px-4"
-              >
-                <div className="w-12 h-12 rounded-2xl bg-[#FFE11D] text-[#3E0B66] flex items-center justify-center shrink-0 shadow-md">
-                  <Icon className="w-6 h-6" />
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-white/80 uppercase tracking-wider">{fact.label}</p>
-                  <p className="font-display font-bold text-base sm:text-xl text-white tabular-nums mt-0.5">
-                    {fact.value}
-                  </p>
-                </div>
+        {isFullPage && (
+          <>
+            {/* 4 Core Value Cards in an equal 2-column grid */}
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+              <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
+                <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[0].accent }}>
+                  {CORE_VALUES[0].title}
+                </h3>
+                <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
+                  {CORE_VALUES[0].summary}
+                </p>
               </div>
-            );
-          })}
-        </div>
+
+              <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
+                <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[1].accent }}>
+                  {CORE_VALUES[1].title}
+                </h3>
+                <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
+                  {CORE_VALUES[1].summary}
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
+                <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[2].accent }}>
+                  {CORE_VALUES[2].title}
+                </h3>
+                <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
+                  {CORE_VALUES[2].summary}
+                </p>
+              </div>
+
+              <div className="rounded-2xl bg-white border border-[#E7D8F5] p-5 shadow-sm transition-transform duration-150 hover:-translate-y-0.5">
+                <h3 className="font-display font-bold text-lg" style={{ color: CORE_VALUES[3].accent }}>
+                  {CORE_VALUES[3].title}
+                </h3>
+                <p className="text-sm text-[#5C4670] mt-1.5 leading-relaxed">
+                  {CORE_VALUES[3].summary}
+                </p>
+              </div>
+            </div>
+
+            {/* Full-Width Key Facts Strip */}
+            <div className="mt-10 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 rounded-3xl bg-[#5B158C] text-white p-5 sm:p-8 shadow-xl border border-white/10">
+              {SCHOOL_FACTS.map((fact) => {
+                const Icon = fact.icon;
+                return (
+                  <div
+                    key={fact.label}
+                    className="flex items-center gap-4 sm:px-4"
+                  >
+                    <div className="w-12 h-12 rounded-2xl bg-[#FFE11D] text-[#3E0B66] flex items-center justify-center shrink-0 shadow-md">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <div>
+                      <p className="text-xs font-semibold text-white/80 uppercase tracking-wider">{fact.label}</p>
+                      <p className="font-display font-bold text-base sm:text-xl text-white tabular-nums mt-0.5">
+                        {fact.value}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {onBack && (
+              <div className="mt-10 text-center">
+                <button
+                  type="button"
+                  onClick={onBack}
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-2xl bg-white border border-[#E7D8F5] text-[#5B158C] font-display font-bold text-sm shadow-sm hover:bg-[#5B158C] hover:text-white transition-colors cursor-pointer"
+                >
+                  <span>← Back to Home</span>
+                </button>
+              </div>
+            )}
+          </>
+        )}
       </div>
     </section>
   );

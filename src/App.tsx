@@ -10,6 +10,7 @@ import type { ToySpec } from './utils/scroll3d';
 
 export default function App() {
   const [preselectedClass, setPreselectedClass] = useState<string>('Playgroup');
+  const [showFullAbout, setShowFullAbout] = useState<boolean>(false);
   const [spinRequest, setSpinRequest] = useState<{
     toyId: ToySpec['id'] | 'all';
     nonce: number;
@@ -20,10 +21,31 @@ export default function App() {
     if (className) {
       setPreselectedClass(className);
     }
-    const el = document.getElementById('admissions');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
+    setShowFullAbout(false);
+    setTimeout(() => {
+      const el = document.getElementById('admissions');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 50);
+  }, []);
+
+  const handleOpenAboutPage = useCallback(() => {
+    setShowFullAbout(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  const handleNavigate = useCallback((href: string) => {
+    setShowFullAbout(false);
+    const id = href.replace('#', '');
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 50);
   }, []);
 
   const handleSpinToy = useCallback((toyId: ToySpec['id'] | 'all') => {
@@ -41,18 +63,27 @@ export default function App() {
         onToySpun={(label) => setLastSpunToy(label)}
       />
 
-      <Navbar onEnrolClick={() => scrollToAdmissions()} />
+      <Navbar onEnrolClick={() => scrollToAdmissions()} onNavigate={handleNavigate} />
 
       <main>
-        <HeroSection
-          onEnrolClick={() => scrollToAdmissions()}
-          onSpinToy={handleSpinToy}
-          lastSpunToy={lastSpunToy}
-        />
-        <AboutSection />
-        <ProgrammesSection onApplyForClass={(cls) => scrollToAdmissions(cls)} />
-        <ActivitiesGallerySection />
-        <AdmissionsSection preselectedClass={preselectedClass} />
+        {showFullAbout ? (
+          <AboutSection
+            isFullPage
+            onBack={() => handleNavigate('#about')}
+          />
+        ) : (
+          <>
+            <HeroSection
+              onEnrolClick={() => scrollToAdmissions()}
+              onSpinToy={handleSpinToy}
+              lastSpunToy={lastSpunToy}
+            />
+            <AboutSection onReadMore={handleOpenAboutPage} />
+            <ProgrammesSection onApplyForClass={(cls) => scrollToAdmissions(cls)} />
+            <ActivitiesGallerySection />
+            <AdmissionsSection preselectedClass={preselectedClass} />
+          </>
+        )}
       </main>
     </div>
   );

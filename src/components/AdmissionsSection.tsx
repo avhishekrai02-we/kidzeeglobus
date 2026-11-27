@@ -427,7 +427,7 @@ export function AdmissionsSection({ preselectedClass }: AdmissionsSectionProps) 
             <a href="#home" className="hover:text-[#FFE11D] transition-colors">
               Home
             </a>
-            <a href="#about" className="hover:text-[#FFE11D] transition-colors">
+            <a href="./about.html" className="hover:text-[#FFE11D] transition-colors">
               About Us
             </a>
             <a href="#programmes" className="hover:text-[#FFE11D] transition-colors">
