@@ -100,11 +100,11 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
                 Kyongsa, Gayzing. A joyful, colourful learning home for curious toddlers and primary learners.
               </p>
 
-              <div className="flex flex-wrap items-center gap-3 pt-0.5">
+              <div className="flex flex-wrap items-center gap-3 pt-1">
                 <button
                   type="button"
                   onClick={onEnrolClick}
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 sm:px-5 sm:py-2.5 rounded-xl bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-sm shadow-md transition-transform active:scale-95 whitespace-nowrap shrink-0 cursor-pointer"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#FFE11D] text-[#3E0B66] font-display font-bold text-base shadow-md transition-transform active:scale-95 whitespace-nowrap shrink-0 cursor-pointer"
                 >
                   <span>Enrol Now</span>
                   <ArrowRight className="w-4 h-4" />
@@ -112,9 +112,9 @@ export function HeroSection({ onEnrolClick, onSpinToy, lastSpunToy }: HeroSectio
 
                 <a
                   href="#programmes"
-                  className="inline-flex items-center px-4 py-2.5 rounded-xl border border-white/40 text-white font-display font-semibold text-sm whitespace-nowrap shrink-0 transition-colors hover:bg-white/10"
+                  className="inline-flex items-center px-5 py-3 rounded-xl border border-white/40 text-white font-display font-semibold text-base whitespace-nowrap shrink-0 transition-colors hover:bg-white/10"
                 >
-                  Explore Programmes
+                  Explore
                 </a>
               </div>
             </div>
